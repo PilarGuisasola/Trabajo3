@@ -12,8 +12,22 @@
         Nota1 = nota1;
         Nota2 = nota2;
     }
+
+    public double Promedio()
+    {
+        return (Nota1 + Nota2) / 2;
+    }
+
+    public bool EstaAprobado()
+    {
+        return Promedio() >= 6;
+    }
+
+    public void SubirNota()
+    {
+        Nota1 = Math.Min(Nota1 + 1, 10);
+        Nota2 = Math.Min(Nota2 + 1, 10);
+    }
 }
-
-
 
 
