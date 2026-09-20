@@ -1,4 +1,4 @@
-﻿public class Profesor : Persona
+﻿public class Profesor : Persona, IExportable
 {
     public string Materia { get; set; }
 
@@ -6,5 +6,15 @@
         : base(nombre, documento)
     {
         Materia = materia;
+    }
+
+    public override string Presentarse()
+    {
+        return "Hola, soy " + Nombre + " y dicto " + Materia + ".";
+    }
+
+    public string ExportarLinea()
+    {
+        return "PROFESOR;" + Nombre + ";" + Materia;
     }
 }

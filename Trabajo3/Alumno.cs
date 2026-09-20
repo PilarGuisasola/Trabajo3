@@ -1,4 +1,4 @@
-﻿public class Alumno : Persona
+﻿public class Alumno : Persona, IExportable
 {
     public int Legajo { get; private set; }
     public double Nota1 { get; private set; }
@@ -41,5 +41,15 @@
     public override string ToString()
     {
         return Legajo + " - " + Nombre + " (promedio: " + Promedio() + ")";
+    }
+
+    public override string Presentarse()
+    {
+        return "Hola, soy " + Nombre + ", alumno con legajo " + Legajo + ".";
+    }
+
+    public string ExportarLinea()
+    {
+        return "ALUMNO;" + Legajo + ";" + Nombre + ";" + Promedio();
     }
 }

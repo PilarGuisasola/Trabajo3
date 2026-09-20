@@ -136,3 +136,47 @@ do
     }
 
 } while (opcion != 6);
+
+Console.WriteLine();
+Console.WriteLine("=== ETAPA 8 - POLIMORFISMO ===");
+
+Alumno alumnoEjemplo = new Alumno("Ana Pérez", 12345678, 1234);
+alumnoEjemplo.CargarNotas(7, 7);
+
+Profesor profesorEjemplo = new Profesor("Marta Díaz", 23456789, "Programación");
+
+Preceptor preceptorEjemplo = new Preceptor("Carlos López", 34567890);
+
+List<Persona> personas = new List<Persona>();
+
+personas.Add(alumnoEjemplo);
+personas.Add(profesorEjemplo);
+personas.Add(preceptorEjemplo);
+
+foreach (Persona persona in personas)
+{
+    Console.WriteLine(persona.Presentarse());
+}
+
+Console.WriteLine();
+Console.WriteLine("=== ETAPA 9 - INTERFACES ===");
+
+Materia materia1 = new Materia("PROG1", "Programación I", 128);
+Materia materia2 = new Materia("BD1", "Base de Datos I", 96);
+
+List<Materia> materias = new List<Materia>();
+
+materias.Add(materia1);
+materias.Add(materia2);
+
+List<IExportable> exportables = new List<IExportable>();
+
+exportables.Add(alumnoEjemplo);
+exportables.Add(profesorEjemplo);
+exportables.Add(materia1);
+exportables.Add(materia2);
+
+foreach (IExportable exportable in exportables)
+{
+    Console.WriteLine(exportable.ExportarLinea());
+}

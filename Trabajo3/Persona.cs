@@ -8,4 +8,9 @@
         Nombre = nombre;
         Documento = documento;
     }
+
+    public virtual string Presentarse()
+    {
+        return "Hola, soy " + Nombre + ".";
+    }
 }
