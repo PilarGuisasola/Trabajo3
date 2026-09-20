@@ -1,13 +1,12 @@
-﻿public class Alumno
+﻿public class Alumno : Persona
 {
-    public string Nombre { get; set; }
     public int Legajo { get; private set; }
     public double Nota1 { get; private set; }
     public double Nota2 { get; private set; }
 
-    public Alumno(string nombre, int legajo)
+    public Alumno(string nombre, int documento, int legajo)
+        : base(nombre, documento)
     {
-        Nombre = nombre;
         Legajo = legajo;
     }
 
