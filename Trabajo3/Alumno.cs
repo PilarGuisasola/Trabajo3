@@ -28,6 +28,10 @@
         Nota1 = Math.Min(Nota1 + 1, 10);
         Nota2 = Math.Min(Nota2 + 1, 10);
     }
+    public override string ToString()
+    {
+        return Legajo + " - " + Nombre + " (promedio: " + Promedio() + ")";
+    }
 }
 
 
