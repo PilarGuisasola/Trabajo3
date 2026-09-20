@@ -180,3 +180,5 @@ foreach (IExportable exportable in exportables)
 {
     Console.WriteLine(exportable.ExportarLinea());
 }
+// Al agregar ExportarEncabezado() aparecieron 3 errores:
+// Alumno, Profesor y Materia no implementaban ese método de IExportable.
